@@ -13,18 +13,30 @@
       background: #f4f4f4;
     }
     .container {
-      max-width: 900px;
-      margin: auto;
-      background: white url('Microsoft-Certified.webp') no-repeat center;
-      background-size: 300px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-blend-mode: lighten;
-      padding: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
-    }
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('Microsoft-Certified.webp') no-repeat center center;
+  background-size: 300px;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
+}
     h1, h2 { color: #333; }
     .section { margin-bottom: 2rem; }
     .section h2 { text-decoration: underline; }
