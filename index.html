@@ -1,238 +1,279 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vijay Singh | IT Support Engineer</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #F2F0F1;
-    }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: #F2F0F1;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
-    }
-    .container::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: url('Microsoft-Certified.webp') no-repeat center center;
-      background-size: 300px;
-      opacity: 0.40;
-      z-index: 0;
-      pointer-events: none;
-    }
-    .container > * {
-      position: relative;
-      z-index: 1;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-    .profile-pic {
-      width: 130px;
-      height: 130px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-right: 20px;
-      border: 2px solid #ccc;
-    }
-    .intro {
-      flex: 1;
-    }
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #333;
-    }
-    .position {
-      font-weight: bold;
-      color: #555;
-      margin-top: 5px;
-    }
-    .contact span {
-      display: inline-block;
-      margin-right: 15px;
-      font-size: 14px;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    .section h2 {
-      text-decoration: underline;
-      color: #333;
-    }
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #0078d7;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      margin-top: 0.5rem;
-    }
-    .btn:hover {
-      background: #005a9e;
-    }
-    .skills-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-    .skills-columns ul {
-      flex: 1;
-      min-width: 300px;
-      list-style-type: none;
-      padding-left: 0;
-    }
-    .skills-columns li::before {
-      content: "✅ ";
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    li {
-      margin-bottom: 0.5rem;
-      font-size: 14px;
-    }
-    .company {
-      color: #005a9e;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <img src="Profile Photo.jpeg" alt="Vijay Singh" class="profile-pic" />
-      <div class="intro">
-        <h1>Vijay Singh</h1>
-        <p class="position">Senior Engineer – IT Support</p>
-        <div class="contact">
-          <span>📍 Faridabad, Haryana</span>
-          <span>📞 96549 96956</span>
-          <span>✉️ vijaysingh.241991@gmail.com</span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vijay Singh — IT Support Engineer</title>
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <meta name="description" content="Vijay Singh — Senior IT Support Engineer. Office 365, AD, Azure, Intune, MDM, troubleshooting."/>
+
+    <style>
+      :root{
+        --bg: #f2f0f1;
+        --card: #fff;
+        --muted: #6c757d;
+        --primary: #0d6efd;
+        --glass: rgba(255,255,255,0.6);
+      }
+      [data-theme='dark']{ --bg: #0b0f14; --card:#0f1720; --muted:#9aa6b2; --primary:#4ea8ff; --glass: rgba(255,255,255,0.04); }
+
+      body{
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        background: linear-gradient(180deg,var(--bg), #e9e7e8 120%);
+        color: #111827;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+      }
+
+      .wrap{
+        max-width: 980px;
+        margin: 2rem auto;
+        padding: 1.5rem;
+      }
+
+      .hero{
+        display:flex; gap:1rem; align-items:center; background:var(--card); border-radius:12px; padding:1.25rem; box-shadow:0 6px 18px rgba(15,23,42,0.06);
+      }
+
+      .avatar{ width:110px; height:110px; object-fit:cover; border-radius:10px; border:2px solid rgba(0,0,0,0.06);} 
+      h1{ font-size:1.6rem; margin:0; }
+      .sub{ color:var(--muted); font-weight:600 }
+
+      .meta span{ display:inline-flex; align-items:center; gap:.5rem; color:var(--muted); font-size:.92rem }
+
+      .section-card{ background:var(--card); border-radius:12px; padding:1rem; box-shadow:0 6px 18px rgba(15,23,42,0.04); }
+
+      /* Skills columns */
+      .skill-badge{ display:inline-block; margin:.15rem .25rem; padding:.32rem .6rem; border-radius:999px; background:var(--glass); font-size:.85rem; color:var(--muted); }
+
+      /* subtle watermark */
+      .watermark{ position:absolute; right:10px; top:10px; opacity:0.08; width:220px; pointer-events:none }
+
+      /* animations */
+      .fade-up{ transform:translateY(8px); opacity:0; transition:all .6s cubic-bezier(.2,.9,.3,1); }
+      .fade-up.in-view{ transform:none; opacity:1 }
+
+      /* responsive adjustments */
+      @media (max-width:720px){ .hero{ flex-direction:row; } .meta{ margin-top:.35rem } }
+
+      /* dark-mode toggle */
+      .theme-toggle{ background:transparent; border:1px solid rgba(0,0,0,0.06); padding:.35rem .5rem; border-radius:8px }
+    </style>
+  </head>
+  <body>
+    <div class="wrap position-relative">
+      <img src="Microsoft-Certified.webp" alt="watermark" class="watermark"/>
+
+      <!-- Hero -->
+      <header class="hero mb-4">
+        <img src="Profile Photo.jpeg" alt="Vijay Singh" class="avatar"/>
+        <div class="flex-grow-1">
+          <h1>Vijay Singh <small class="text-muted">— Senior Engineer, IT Support</small></h1>
+          <p class="sub mb-1">Desktop & Systems Support • Azure • Office 365 • Intune • Active Directory</p>
+          <div class="meta d-flex flex-wrap gap-2 align-items-center">
+            <span>📍 Faridabad, Haryana</span>
+            <span>📞 96549 96956</span>
+            <span>✉️ <a href="mailto:vijaysingh.241991@gmail.com">vijaysingh.241991@gmail.com</a></span>
+            <span class="ms-auto"><button id="themeBtn" class="theme-toggle"><i class="bi bi-moon"></i> Theme</button></span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Two column layout -->
+      <div class="row g-3">
+        <div class="col-12 col-lg-4">
+          <div class="section-card mb-3 fade-up" data-delay="0">
+            <h5>About</h5>
+            <p class="small text-muted">Dedicated IT professional with 10+ years of experience in desktop support, system administration, Office 365, Active Directory, and cloud technologies. Recently joined <strong>Progression Infonet Pvt. Ltd.</strong> as Senior Engineer (Jun 2024 — Present).</p>
+
+            <h6 class="mt-3">Quick Skills</h6>
+            <div class="mt-2">
+              <span class="skill-badge">Office 365</span>
+              <span class="skill-badge">Active Directory</span>
+              <span class="skill-badge">Microsoft Intune</span>
+              <span class="skill-badge">Azure</span>
+              <span class="skill-badge">EDR</span>
+              <span class="skill-badge">GPO</span>
+            </div>
+
+            <div class="mt-3 d-grid">
+              <button class="btn btn-primary" id="viewResumeBtn"><i class="bi bi-file-earmark-text"></i> View Resume</button>
+              <a class="btn btn-outline-primary mt-2" id="downloadResumeBtn" href="VIJAY_SINGH_Resume_1.pdf" download><i class="bi bi-download"></i> Download Resume</a>
+            </div>
+          </div>
+
+          <div class="section-card fade-up" data-delay="100">
+            <h6>Contact</h6>
+            <p class="small mb-0"><strong>Location:</strong> Faridabad, Haryana</p>
+            <p class="small mb-0"><strong>Phone:</strong> 96549 96956</p>
+            <p class="small mb-0"><strong>Email:</strong> <a href="mailto:vijaysingh.241991@gmail.com">vijaysingh.241991@gmail.com</a></p>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+          <div class="section-card mb-3 fade-up" data-delay="200">
+            <h5>Professional Experience</h5>
+
+            <div class="mb-3">
+              <h6 class="mb-1">Progression Infonet Pvt. Ltd. <small class="text-muted">— Senior Engineer (Jun 2024 – Present)</small></h6>
+              <ul>
+                <li>Administer Windows Server and Azure cloud infrastructure to ensure high uptime and security.</li>
+                <li>Manage Active Directory accounts, GPOs, and OU structures for 1,000+ users.</li>
+                <li>Deploy and enforce corporate policies using Microsoft Intune & MDM for device management.</li>
+                <li>Configure Azure VMs, storage accounts, and virtual networks for project teams.</li>
+                <li>Perform regular patch updates, security hardening, and vulnerability remediation.</li>
+                <li>Monitor system performance using EDR tools and Azure Monitor; collaborate with security teams to handle incidents.</li>
+                <li>Document infrastructure changes, SOPs, and disaster recovery plans; onboard new devices and provide handover documentation.</li>
+              </ul>
+            </div>
+
+            <div class="mb-3">
+              <h6 class="mb-1">Future Focus Infotech Pvt. Ltd. <small class="text-muted">— IT Support Engineer – L2 (Feb 2023 – May 2024)</small></h6>
+              <ul>
+                <li>System administration for Windows Server, Exchange, and M365 environments; managed SharePoint Online.</li>
+                <li>Configured MFA & Conditional Access, automated tasks with PowerShell, and coordinated critical incident responses.</li>
+              </ul>
+            </div>
+
+            <div class="mb-3">
+              <h6 class="mb-1">Isourse Technologies Pvt. Ltd. <small class="text-muted">— IT Support Engineer (May 2022 – Dec 2022)</small></h6>
+              <ul>
+                <li>Managed AD lifecycle, GPOs, RDP/VPN access and endpoint deployments.</li>
+              </ul>
+            </div>
+
+            <div>
+              <h6 class="mb-1">Earlier Roles</h6>
+              <p class="small text-muted">Desktop Support roles at S.S. Enterprises and Quality Footwear Industries — experience in on-prem server maintenance, networking basics, and end-user support.</p>
+            </div>
+
+          </div>
+
+          <div class="section-card fade-up" data-delay="300">
+            <h5>Education & Certifications</h5>
+            <ul>
+              <li>BCA Graduate – Shobhit University, Meerut</li>
+              <li>Azure AZ-104 Certified – Microsoft</li>
+              <li>Windows Server Training – SSDN, Gurugram</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="mt-4 text-center small text-muted">Built with ❤️ • Updated for your new role at Progression Infonet</footer>
+    </div>
+
+    <!-- Resume Modal -->
+    <div class="modal fade" id="resumeModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Resume — Vijay Singh</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-0" style="height:80vh;">
+            <iframe id="resumeFrame" src="VIJAY_SINGH_Resume_1.pdf" style="width:100%; height:100%; border:0"></iframe>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="section">
-      <h2>Profile</h2>
-      <p>Dedicated IT professional with 10+ years of experience in desktop support, system administration, Office 365, Active Directory, and cloud technologies. Proven track record in delivering reliable technical solutions and exceptional support.</p>
-    </div>
+    <!-- Bootstrap and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <div class="section">
-      <h2>Skills</h2>
-      <div class="skills-columns">
-        <ul>
-          <li>Office 365 (O365)</li>
-          <li>Active Directory</li>
-          <li>Cloud Support</li>
-          <li>System Administration</li>
-          <li>Microsoft Intune</li>
-          <li>Azure Functions</li>
-          <li>Azure Services</li>
-          <li>SharePoint Management</li>
-          <li>GPO (Group Policy) Implementation</li>
-          <li>Citrix & Remote Desktop Support</li>
-          <li>EDR (Endpoint Detection and Response)</li>
-        </ul>
-        <ul>
-          <li>MFA (Multi-Factor Authentication)</li>
-          <li>MDM (Mobile Device Management) Policies</li>
-          <li>ManageEngine ServiceDesk Plus</li>
-          <li>Maximo & ServiceNow</li>
-          <li>Troubleshooting OS, Windows Updates & Performance</li>
-          <li>LAN & Remote Access Support</li>
-          <li>Team Collaboration & Building</li>
-          <li>Manufacturing Processes</li>
-          <li>Multitasking</li>
-          <li>Problem-Solving Abilities</li>
-          <li>Teamwork & Communication</li>
-        </ul>
-      </div>
-    </div>
-<div class="section">
-  <h2>Professional Experience</h2>
+    <!-- Google Analytics (gtag) placeholder - replace with your GA Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments)}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // <-- replace with your GA4 Measurement ID
+    </script>
 
-  <p><span class="company">Progression Infonet Pvt. Ltd.</span> – <strong>Senior Engineer</strong> (Jun 2024 – Present)</p>
-  <ul>
-    <li>Administer Windows Server and Azure cloud infrastructure to ensure high uptime and security.</li>
-    <li>Manage Active Directory accounts, GPOs, and OU structures for 1,000+ users.</li>
-    <li>Deploy and enforce corporate policies using Microsoft Intune & MDM for device management.</li>
-    <li>Configure Azure VMs, storage accounts, and virtual networks for project teams.</li>
-    <li>Perform regular patch updates, security hardening, and vulnerability remediation.</li>
-    <li>Monitor system performance using EDR tools and Azure Monitor.</li>
-    <li>Collaborate with security teams to handle incidents and implement preventive measures.</li>
-    <li>Document infrastructure changes, SOPs, and disaster recovery plans.</li>
-  </ul>
+    <!-- Firebase (App + Analytics + Firestore) - replace config with your project values -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script>
+      // TODO: replace the firebaseConfig with your project's config
+      const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT.appspot.com",
+        messagingSenderId: "SENDER_ID",
+        appId: "APP_ID",
+        measurementId: "G-XXXXXXXXXX"
+      };
+      // init
+      const app = firebase.initializeApp(firebaseConfig);
+      const analytics = firebase.analytics();
+      const db = firebase.firestore();
 
-  <p><span class="company">Future Focus Infotech Pvt. Ltd.</span> – <strong>IT Support Engineer – L2</strong> (Client: IBM India, Feb 2023 – May 2024)</p>
-  <ul>
-    <li>Provided system administration support for Windows Server, Exchange, and M365 environments.</li>
-    <li>Managed SharePoint Online sites, document libraries, and permission policies.</li>
-    <li>Resolved complex Active Directory issues, including replication, logon failures, and account lockouts.</li>
-    <li>Configured MFA & Conditional Access for security compliance.</li>
-    <li>Automated routine tasks using PowerShell scripts for user provisioning and mailbox management.</li>
-    <li>Handled patch deployment and software distribution using ManageEngine.</li>
-    <li>Coordinated with cross-functional teams to resolve P1/P2 incidents within SLA.</li>
-    <li>Maintained documentation for troubleshooting and knowledge transfer.</li>
-  </ul>
+      function incrementDownloadCounter(){
+        // simple counter in Firestore under collection 'counters' doc 'resume'
+        const ref = db.collection('counters').doc('resume');
+        ref.get().then(doc=>{
+          if(doc.exists){
+            ref.update({count: firebase.firestore.FieldValue.increment(1)});
+          } else {
+            ref.set({count:1});
+          }
+        }).catch(err=>console.error('Firestore counter error',err));
+      }
+    </script>
 
-  <p><span class="company">Isourse Technologies Pvt. Ltd.</span> – <strong>IT Support Engineer</strong> (Client: Uno Minda, May 2022 – Dec 2022)</p>
-  <ul>
-    <li>Managed Active Directory user lifecycle (joiners, movers, leavers).</li>
-    <li>Configured and maintained GPOs for security, desktop restrictions, and mapped drives.</li>
-    <li>Provided RDP and VPN access, ensuring secure connectivity for remote users.</li>
-    <li>Deployed software packages and security updates across endpoints.</li>
-    <li>Monitored system health, performed regular backups, and restored data as needed.</li>
-    <li>Resolved escalated user issues related to authentication, printing, and network access.</li>
-    <li>Supported end users during hardware refresh projects.</li>
-  </ul>
+    <script>
+      // small utility: reveal animations when in view
+      document.addEventListener('DOMContentLoaded',()=>{
+        const els = document.querySelectorAll('.fade-up');
+        const obs = new IntersectionObserver((entries)=>{
+          entries.forEach(entry=>{
+            if(entry.isIntersecting){ entry.target.classList.add('in-view') }
+          });
+        },{threshold:.12});
+        els.forEach(el=>obs.observe(el));
 
-  <p><span class="company">S.S. Enterprises</span> – <strong>Desktop Support Engineer</strong> (Aug 2019 – Apr 2022)</p>
-  <ul>
-    <li>Installed and configured Windows OS, software applications, and security updates.</li>
-    <li>Managed network shares, printer queues, and local AD authentication.</li>
-    <li>Assisted in small-scale server migrations and upgrades.</li>
-    <li>Configured endpoint security software and monitored threat alerts.</li>
-    <li>Provided technical training and guidance to end users.</li>
-    <li>Maintained asset inventory and ensured licensing compliance.</li>
-  </ul>
+        // theme toggle
+        const themeBtn = document.getElementById('themeBtn');
+        const current = localStorage.getItem('theme');
+        if(current==='dark') document.documentElement.setAttribute('data-theme','dark');
+        function updateTheme(){
+          const isDark = document.documentElement.getAttribute('data-theme')==='dark';
+          themeBtn.innerHTML = isDark? '<i class="bi bi-sun"></i> Light':'<i class="bi bi-moon"></i> Dark';
+        }
+        updateTheme();
+        themeBtn.addEventListener('click', ()=>{
+          const isDark = document.documentElement.getAttribute('data-theme')==='dark';
+          if(isDark){ document.documentElement.removeAttribute('data-theme'); localStorage.setItem('theme','light') }
+          else { document.documentElement.setAttribute('data-theme','dark'); localStorage.setItem('theme','dark') }
+          updateTheme();
+        });
 
-  <p><span class="company">Quality Footwear Industries</span> – <strong>Desktop Support Engineer</strong> (Sep 2014 – Aug 2019)</p>
-  <ul>
-    <li>Provided end-to-end IT support for desktops, laptops, and network devices.</li>
-    <li>Troubleshot Windows OS issues, software conflicts, and driver problems.</li>
-    <li>Managed network cabling, switch configuration, and basic firewall settings.</li>
-    <li>Assisted with on-premises server maintenance and backup routines.</li>
-    <li>Performed preventive maintenance and IT equipment upgrades.</li>
-    <li>Ensured timely escalation and resolution of IT issues to minimize downtime.</li>
-  </ul>
-</div>
-    <div class="section">
-      <h2>Education & Training</h2>
-      <ul>
-        <li>BCA Graduate – Shobhit University, Meerut</li>
-        <li>Azure AZ-104 Certified – Microsoft</li>
-        <li>Windows Server Training – SSDN, Gurugram</li>
-      </ul>
-    </div>
+        // resume modal
+        const viewBtn = document.getElementById('viewResumeBtn');
+        const resumeModal = new bootstrap.Modal(document.getElementById('resumeModal'));
+        viewBtn.addEventListener('click', ()=> resumeModal.show());
 
-    <div class="section">
-      <a class="btn" href="mailto:vijaysingh.241991@gmail.com">📧 Contact Me</a>
-      <a class="btn" href="VIJAY_SINGH_Resume_1.pdf" download>📄 Download Resume</a>
-    </div>
-  </div>
-</body>
+        // download tracking
+        const downloadBtn = document.getElementById('downloadResumeBtn');
+        downloadBtn.addEventListener('click', (e)=>{
+          // GA event
+          try{ gtag('event','download_resume',{ 'method':'site' }); }catch(e){}
+          // Firebase analytics
+          try{ analytics.logEvent('download_resume'); }catch(e){}
+          // Firestore counter
+          try{ incrementDownloadCounter(); }catch(e){}
+        });
+      });
+    </script>
+  </body>
 </html>
