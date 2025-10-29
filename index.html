@@ -200,6 +200,65 @@ footer a {
   text-shadow: 0 0 12px rgba(0, 255, 255, 1);
   transform: scale(1.02);
 }
+
+  /* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    gap: 0;
+    width: 95%;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  header {
+    margin-top: 40px;
+  }
+
+  header img.profile {
+    width: 100px;
+    height: 100px;
+  }
+
+  .microsoft-badge {
+    top: -5px;
+    right: 10px;
+    width: 90px;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .company {
+    font-size: 1.05rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    margin: 40px 0 20px 0;
+  }
+
+  /* Optional: center align contact info for better look on mobile */
+  .sidebar p, .sidebar h2, .sidebar ul {
+    text-align: center;
+  }
+
+  .btn-row {
+    text-align: center;
+  }
+}
+
+  
 </style>
 </head>
 <body>
