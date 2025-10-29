@@ -37,7 +37,12 @@ header img.profile {
   height: 120px;
   border-radius: 50%;
   border: 3px solid var(--neon);
-  box-shadow: 0 0 25px var(--neon);
+  box-shadow: 0 0 30px var(--neon);
+  transition: all 0.3s ease;
+}
+header img.profile:hover {
+  box-shadow: 0 0 45px var(--neon);
+  transform: scale(1.03);
 }
 header h1 {
   font-size: 2rem;
@@ -49,17 +54,25 @@ header p {
   color: var(--text-main);
   font-size: 0.9rem;
 }
+
+/* Microsoft Certified Badge */
 .microsoft-badge {
   position: absolute;
-  right: 15px;
-  top: 0;
-  width: 90px;
-  animation: pulse 2.5s infinite;
+  right: 25px;
+  top: -10px;
+  width: 110px; /* larger size */
+  filter: drop-shadow(0 0 10px var(--neon));
+  animation: softPulse 3s ease-in-out infinite;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
-@keyframes pulse {
-  0% { filter: drop-shadow(0 0 2px var(--neon)); }
-  50% { filter: drop-shadow(0 0 8px var(--neon)); }
-  100% { filter: drop-shadow(0 0 2px var(--neon)); }
+.microsoft-badge:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 18px var(--neon));
+}
+@keyframes softPulse {
+  0%   { filter: drop-shadow(0 0 6px var(--neon)); }
+  50%  { filter: drop-shadow(0 0 16px var(--neon)); }
+  100% { filter: drop-shadow(0 0 6px var(--neon)); }
 }
 
 /* LAYOUT */
@@ -174,12 +187,7 @@ footer a {
   text-decoration: none;
 }
 
-/* --- Header block alignment --- */
-.header-content {
-  margin-top: -40px; /* move name & title slightly up */
-}
-
-/* --- Company name styling --- */
+/* Company name styling */
 .company {
   font-size: 1.2rem;
   font-weight: 600;
@@ -188,24 +196,17 @@ footer a {
   margin-bottom: 4px;
   transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
-
 .company:hover {
   text-shadow: 0 0 12px rgba(0, 255, 255, 1);
   transform: scale(1.02);
 }
-
-/* Optional: add subtle spacing to section titles */
-.section-title {
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
-}
-
 </style>
 </head>
 <body>
 
 <header>
-  <img src="profile.jpg" alt="Profile Photo" class="profile">
-  <img src="microsoft-certified-badge.png" alt="Microsoft Certified" class="microsoft-badge">
+  <img src="Profile Photo.jpeg" alt="Profile Photo" class="profile">
+  <img src="Microsoft-Certified.webp" alt="Microsoft Certified" class="microsoft-badge">
   <h1>Vijay Singh</h1>
   <p>Senior Network & Systems Engineer — Cloud | Security | Automation</p>
 </header>
@@ -244,7 +245,6 @@ footer a {
 
   <!-- Main -->
   <main class="main-content">
-    <!-- Profile -->
     <section id="profile">
       <div class="section-title">Profile</div>
       <div class="card">
@@ -252,7 +252,6 @@ footer a {
       </div>
     </section>
 
-    <!-- Experience -->
     <section id="experience">
       <div class="section-title">Professional Experience</div>
 
@@ -327,7 +326,6 @@ footer a {
       </div>
     </section>
 
-    <!-- Education -->
     <section id="education">
       <div class="section-title">Education & Training</div>
       <div class="card">
