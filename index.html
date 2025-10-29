@@ -7,261 +7,238 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #f2f6fb 0%, #e8eef6 100%);
-      color: #222;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
+      color:#222; margin:0; padding:0;
+      scroll-behavior:smooth;
     }
+    header { text-align:center; padding:60px 20px 40px; }
+    header h1 { font-weight:700; font-size:2rem; margin-bottom:6px; }
+    header h5 { color:#444; margin-bottom:10px; }
+    header p { color:#555; margin:0; }
 
-    header {
-      text-align: center;
-      padding: 50px 20px 30px;
-      position: relative;
+    .top-banner {
+      display:flex; justify-content:center; align-items:center;
+      gap:20px; flex-wrap:wrap; margin-bottom:20px;
     }
-
-    header h1 {
-      font-weight: 700;
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    header h5 {
-      color: #444;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      margin: 0;
-      color: #555;
-    }
-
     .profile-photo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #dbe3ef;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width:130px; height:130px; border-radius:50%;
+      object-fit:cover; border:3px solid #dbe3ef;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
     }
-
-    .profile-photo:hover {
-      transform: scale(1.05);
-    }
-
-    .certified-badge {
-      width: 120px;
-      margin-top: 10px;
-    }
+    .certified-badge { width:130px; }
 
     .btn-custom {
-      background-color: #1a2a44;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      display: inline-block;
-      margin: 10px 5px 0;
+      background-color:#1a2a44; color:#fff; padding:10px 22px;
+      border-radius:30px; font-weight:600; text-decoration:none;
+      margin:5px; transition:all .3s ease;
+      display:inline-block;
     }
+    .btn-custom:hover { background-color:#2b3c5c; }
 
-    .btn-custom:hover {
-      background-color: #2b3c5c;
-    }
-
-    .contact-info {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: #444;
-    }
+    .contact-info { font-size:.95rem; color:#444; margin-top:10px; }
 
     .card-plain {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-      padding: 25px 30px;
-      margin-bottom: 25px;
-      transition: all 0.3s ease-in-out;
-      opacity: 0;
-      transform: translateY(20px);
+      background:#fff; border-radius:12px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.08);
+      padding:25px 30px; margin-bottom:25px;
+      transition:all .3s ease-in-out;
+      opacity:0; transform:translateY(20px);
     }
-
     .card-plain:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      transform:translateY(-4px);
+      box-shadow:0 6px 20px rgba(0,0,0,0.12);
     }
-
-    .visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: all 0.8s ease-in-out;
-    }
+    .visible { opacity:1; transform:translateY(0); transition:all .8s ease-in-out; }
 
     h2.section-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #1a2a44;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #e3e8f0;
-      padding-bottom: 6px;
+      font-size:1.4rem; font-weight:700;
+      color:#1a2a44; text-transform:uppercase;
+      letter-spacing:.5px; margin-bottom:20px;
+      border-bottom:2px solid #e3e8f0; padding-bottom:6px;
     }
 
-    footer {
-      text-align: center;
-      font-size: 0.85rem;
-      color: #777;
-      margin: 40px 0 20px;
-    }
+    footer { text-align:center; font-size:.85rem; color:#777; margin:40px 0 20px; }
 
-    /* Image modal styles */
-    .modal-img {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      padding-top: 70px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .close {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      color: white;
-      font-size: 35px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      .profile-photo {
-        position: static;
-        margin: 0 auto 10px;
-        display: block;
-      }
-      header h1 {
-        font-size: 1.6rem;
-      }
-      .certified-badge {
-        width: 100px;
-      }
+    @media(max-width:768px){
+      header h1{font-size:1.6rem;}
+      .certified-badge{width:100px;}
+      .profile-photo{width:110px;height:110px;}
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <img src="Profile Photo.jpeg" alt="Vijay Singh" class="profile-photo" id="profileImg">
-    <h1>Vijay Singh</h1>
-    <h5>Senior Engineer – IT Infrastructure Lead</h5>
-    <p>Elcon Banshu Wiring System Pvt. Ltd.</p>
+
+<header>
+  <!-- Side-by-Side Photo + Badge -->
+  <div class="top-banner">
+    <img src="Profile Photo.jpeg" alt="Vijay Singh" class="profile-photo">
     <img src="Microsoft-Certified.webp" alt="Microsoft Certified" class="certified-badge">
-
-    <div class="contact-info">
-      📧 <strong>vijaysingh.241991@gmail.com</strong> |
-      📞 +91 96549 96956 |
-      📍 Bhiwadi, Alwar Rajasthan 301019, India<br>
-      🔗 <a href="https://www.ebwsindia.com" target="_blank">www.ebwsindia.com</a>
-    </div>
-
-    <div>
-      <a href="VIJAY_SINGH_Resume_1.pdf" download class="btn-custom">📄 Download Resume</a>
-      <a href="mailto:vijaysingh.241991@gmail.com" class="btn-custom">✉️ Contact Me</a>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- Example: Skills Section (You can keep your full experience here as before) -->
-    <section class="section" id="skills">
-      <h2 class="section-title">Skills</h2>
-      <div class="card-plain">
-        <div class="row">
-          <div class="col-md-6">
-            <ul>
-              <li>Office 365 (O365) Administration</li>
-              <li>Active Directory & GPO</li>
-              <li>Azure AD & Azure Services</li>
-              <li>Microsoft Intune & Endpoint Manager</li>
-              <li>System Administration (Windows Server)</li>
-              <li>SharePoint Online & Teams</li>
-              <li>PowerShell Automation</li>
-            </ul>
-          </div>
-          <div class="col-md-6">
-            <ul>
-              <li>Firewall Management (Sophos, FortiGate)</li>
-              <li>VPN (IPsec / SSL Site-to-Site & Remote)</li>
-              <li>Endpoint Detection & Response (EDR)</li>
-              <li>NAS Backup, Backup Validation & DR</li>
-              <li>ManageEngine SDP & Patch Management</li>
-              <li>ServiceNow / Maximo familiarity</li>
-              <li>Network Troubleshooting & VLANs</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>© 2025 Vijay Singh | Portfolio Website</footer>
-
-  <!-- Modal for image preview -->
-  <div id="imgModal" class="modal-img">
-    <span class="close" id="closeModal">&times;</span>
-    <img class="modal-content" id="imgInModal">
   </div>
 
-  <script>
-    // Fade-in animation
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.card-plain').forEach(card => observer.observe(card));
+  <h1>Vijay Singh</h1>
+  <h5>Senior Engineer – IT / Infrastructure Lead</h5>
+  <p>Elcon Banshu Wiring System Pvt. Ltd. (Full-time)</p>
 
-    // Image modal functionality
-    const modal = document.getElementById("imgModal");
-    const modalImg = document.getElementById("imgInModal");
-    const img = document.getElementById("profileImg");
-    const close = document.getElementById("closeModal");
+  <div class="contact-info">
+    📧 <strong>vijaysingh.241991@gmail.com</strong> | 📞 +91 96549 96956 | 📍 Bhiwadi, Alwar Rajasthan 301019, India<br>
+    🔗 <a href="https://www.ebwsindia.com" target="_blank">www.ebwsindia.com</a>
+  </div>
 
-    img.onclick = function() {
-      modal.style.display = "block";
-      modalImg.src = this.src;
-    }
-    close.onclick = function() {
-      modal.style.display = "none";
-    }
-    modal.onclick = function(e) {
-      if (e.target === modal) modal.style.display = "none";
-    }
-  </script>
+  <div class="mt-2">
+    <a href="VIJAY_SINGH_Resume.pdf" download class="btn-custom">📄 Download Resume</a>
+    <a href="mailto:vijaysingh.241991@gmail.com" class="btn-custom">✉️ Contact Me</a>
+  </div>
+</header>
+
+<main class="container">
+  <!-- Profile Section -->
+  <section class="section" id="profile">
+    <h2 class="section-title">Profile</h2>
+    <div class="card-plain">
+      <p>Dedicated IT professional with over 10 years of experience in infrastructure management, desktop support, system administration, Office 365, Intune, and cloud technologies. Proven expertise in designing secure network architectures, implementing backup & DR solutions, and leading enterprise IT operations with a focus on uptime and reliability.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="card-plain">
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li>Office 365 (O365) Administration</li>
+            <li>Active Directory & Group Policy Management</li>
+            <li>Azure AD & Azure Services</li>
+            <li>Microsoft Intune & Endpoint Manager</li>
+            <li>Windows Server Administration</li>
+            <li>SharePoint Online & Teams Management</li>
+            <li>PowerShell Automation</li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <ul>
+            <li>Firewall Management (Sophos, FortiGate)</li>
+            <li>VPN (IPsec / SSL Site-to-Site & Remote)</li>
+            <li>Endpoint Detection & Response (EDR)</li>
+            <li>NAS Backup, Validation & Disaster Recovery</li>
+            <li>ManageEngine SDP & Patch Management</li>
+            <li>ServiceNow / Maximo familiarity</li>
+            <li>Network Troubleshooting & VLAN Management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <!-- EBWS -->
+    <div class="card-plain">
+      <h5><strong>Elcon Banshu Wiring System Pvt. Ltd.</strong></h5>
+      <p><em>Senior Engineer – IT / Infrastructure Lead | Sep 2025 – Present</em></p>
+      <ul>
+        <li>Leading complete IT Infrastructure (INFRA) operations across HO, BOs & manufacturing plants ensuring uptime, security, and business continuity.</li>
+        <li>Administering Sophos Firewall, site-to-site IPsec tunnels, VLANs, and VPNs for secure inter-office connectivity.</li>
+        <li>Automating daily NAS backup & replication tasks, verifying DR readiness and data integrity.</li>
+        <li>Managing Microsoft 365 tenant, Azure AD, Intune policy enforcement, and endpoint compliance.</li>
+        <li>Overseeing Windows Server infrastructure, patch management, and EDR monitoring.</li>
+        <li>Leading vendor coordination, procurement, and IT asset management for 100+ endpoints.</li>
+        <li>Documenting SOPs, network topology, and DR plans; training IT team members on new deployments.</li>
+      </ul>
+    </div>
+
+    <!-- Progression -->
+    <div class="card-plain">
+      <h5><strong>Progression Infonet Pvt. Ltd.</strong></h5>
+      <p><em>System Engineer – IT Infrastructure | Jun 2024 – Sep 2025</em></p>
+      <ul>
+        <li>Managed hybrid Windows Server & Azure environments ensuring high availability and compliance.</li>
+        <li>Administered Active Directory structure, GPOs, and user lifecycle for 1,000+ accounts.</li>
+        <li>Configured Intune MDM, Conditional Access, and MFA policies for security improvement.</li>
+        <li>Automated user provisioning and mailbox creation via PowerShell scripts.</li>
+        <li>Planned patch management schedules, conducted vulnerability remediation and backup validation.</li>
+        <li>Collaborated with clients on infrastructure migration and documentation processes.</li>
+      </ul>
+    </div>
+
+    <!-- Future Focus -->
+    <div class="card-plain">
+      <h5><strong>Future Focus Infotech Pvt. Ltd. (Client: IBM India)</strong></h5>
+      <p><em>IT Support Engineer – L2 | Feb 2023 – May 2024</em></p>
+      <ul>
+        <li>Provided system administration support for Windows Server, Exchange, and M365 for IBM’s internal infrastructure.</li>
+        <li>Monitored and resolved incident/change tickets via ServiceNow, ensuring SLA compliance.</li>
+        <li>Handled complex AD replication, logon failures, and account lockout issues.</li>
+        <li>Developed PowerShell scripts for automation and audit reporting.</li>
+        <li>Supported rollout of MFA, Conditional Access, and compliance policies.</li>
+      </ul>
+    </div>
+
+    <!-- Isourse -->
+    <div class="card-plain">
+      <h5><strong>Isourse Technologies Pvt. Ltd. (Client: Uno Minda)</strong></h5>
+      <p><em>IT Support Engineer | May 2022 – Dec 2022</em></p>
+      <ul>
+        <li>Managed Active Directory user lifecycle (joiners, movers, leavers) for Uno Minda plants.</li>
+        <li>Configured GPOs for desktop restrictions, mapped drives, and application policies.</li>
+        <li>Provided secure VPN and RDP access for remote users.</li>
+        <li>Performed software deployment, patch management, and backup restoration.</li>
+        <li>Supported factory LAN devices, NAS storage, and production-related IT systems.</li>
+      </ul>
+    </div>
+
+    <!-- S.S. Enterprises -->
+    <div class="card-plain">
+      <h5><strong>S.S. Enterprises</strong></h5>
+      <p><em>Desktop Support Engineer | Aug 2019 – Apr 2022</em></p>
+      <ul>
+        <li>Installed and configured Windows OS, applications, and security updates for end users.</li>
+        <li>Managed printer queues, network shares, and local Active Directory authentication.</li>
+        <li>Assisted in small server migrations and endpoint security configurations.</li>
+        <li>Maintained asset inventory and supported end users on hardware refresh cycles.</li>
+      </ul>
+    </div>
+
+    <!-- Quality Footwear -->
+    <div class="card-plain">
+      <h5><strong>Quality Footwear Industries</strong></h5>
+      <p><em>Desktop Support Engineer | Sep 2014 – Aug 2019</em></p>
+      <ul>
+        <li>Provided end-to-end IT support for desktops, laptops, and networking equipment.</li>
+        <li>Troubleshot Windows OS, driver issues, and local network connectivity.</li>
+        <li>Performed preventive maintenance, backups, and IT asset management.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section" id="education">
+    <h2 class="section-title">Education & Training</h2>
+    <div class="card-plain">
+      <ul>
+        <li>BCA — Shobhit University, Meerut</li>
+        <li>Azure Administrator (AZ-104) — Microsoft Certified</li>
+        <li>Windows Server Training — SSDN Technologies, Gurugram</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>© 2025 Vijay Singh | Portfolio Website</footer>
+
+<script>
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1});
+  document.querySelectorAll('.card-plain').forEach(c=>observer.observe(c));
+</script>
 </body>
 </html>
