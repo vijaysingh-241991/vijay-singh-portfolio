@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -49,7 +50,13 @@
       position: absolute;
       top: 20px;
       right: 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.05);
     }
 
     .certified-badge {
@@ -119,27 +126,58 @@
       margin: 40px 0 20px;
     }
 
+    /* Image modal styles */
+    .modal-img {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 70px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       .profile-photo {
         position: static;
         margin: 0 auto 10px;
         display: block;
       }
-
       header h1 {
         font-size: 1.6rem;
       }
-
       .certified-badge {
         width: 100px;
       }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
-    <img src="Profile Photo.jpeg" alt="Vijay Singh" class="profile-photo">
+    <img src="Profile Photo.jpeg" alt="Vijay Singh" class="profile-photo" id="profileImg">
     <h1>Vijay Singh</h1>
     <h5>Senior Engineer – IT Infrastructure Lead</h5>
     <p>Elcon Banshu Wiring System Pvt. Ltd.</p>
@@ -159,8 +197,7 @@
   </header>
 
   <main class="container">
-    <!-- Keep your same sections -->
-    <!-- Skills -->
+    <!-- Example: Skills Section (You can keep your full experience here as before) -->
     <section class="section" id="skills">
       <h2 class="section-title">Skills</h2>
       <div class="card-plain">
@@ -190,26 +227,41 @@
         </div>
       </div>
     </section>
-
-    <!-- Experience (kept same as yours) -->
-    <!-- ... your full experience section here ... -->
-
   </main>
 
   <footer>© 2025 Vijay Singh | Portfolio Website</footer>
 
+  <!-- Modal for image preview -->
+  <div id="imgModal" class="modal-img">
+    <span class="close" id="closeModal">&times;</span>
+    <img class="modal-content" id="imgInModal">
+  </div>
+
   <script>
+    // Fade-in animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
+    document.querySelectorAll('.card-plain').forEach(card => observer.observe(card));
 
-    document.querySelectorAll('.card-plain').forEach(card => {
-      observer.observe(card);
-    });
+    // Image modal functionality
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("imgInModal");
+    const img = document.getElementById("profileImg");
+    const close = document.getElementById("closeModal");
+
+    img.onclick = function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+    }
+    close.onclick = function() {
+      modal.style.display = "none";
+    }
+    modal.onclick = function(e) {
+      if (e.target === modal) modal.style.display = "none";
+    }
   </script>
 </body>
 </html>
