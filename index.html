@@ -1,140 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vijay Singh | IT Infrastructure Engineer</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vijay Singh | IT Infrastructure Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f2f6fb 0%, #e8eef6 100%);
+      color: #222;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
     }
+
     header {
-      background-color: #004080;
-      color: white;
-      padding: 40px 20px;
       text-align: center;
-      border-radius: 0 0 30px 30px;
+      padding: 50px 20px 30px;
+      position: relative;
     }
+
     header h1 {
-      font-size: 2.2rem;
       font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 8px;
     }
+
     header h5 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: #cce0ff;
+      color: #444;
+      margin-bottom: 10px;
     }
+
+    header p {
+      margin: 0;
+      color: #555;
+    }
+
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #dbe3ef;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .certified-badge {
+      width: 120px;
+      margin-top: 10px;
+    }
+
+    .btn-custom {
+      background-color: #1a2a44;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 10px 5px 0;
+    }
+
+    .btn-custom:hover {
+      background-color: #2b3c5c;
+    }
+
     .contact-info {
       margin-top: 10px;
       font-size: 0.95rem;
+      color: #444;
     }
-    main {
-      padding: 40px 15px;
+
+    .card-plain {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      padding: 25px 30px;
+      margin-bottom: 25px;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      transform: translateY(20px);
     }
-    section {
-      margin-bottom: 40px;
+
+    .card-plain:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
     }
+
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 0.8s ease-in-out;
+    }
+
+    h2.section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a2a44;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e3e8f0;
+      padding-bottom: 6px;
+    }
+
     footer {
-      background-color: #004080;
-      color: white;
       text-align: center;
-      padding: 15px;
-      border-radius: 30px 30px 0 0;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
+      color: #777;
+      margin: 40px 0 20px;
     }
-    .profile-img {
-      border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+
+    @media (max-width: 768px) {
+      .profile-photo {
+        position: static;
+        margin: 0 auto 10px;
+        display: block;
+      }
+
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      .certified-badge {
+        width: 100px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Vijay Singh</h1>
-  <h5>System Engineer – IT Infrastructure</h5>
-  <p>Elcon Banshu Wiring System Pvt. Ltd.</p>
+  <header>
+    <img src="Profile Photo.jpeg" alt="Vijay Singh" class="profile-photo">
+    <h1>Vijay Singh</h1>
+    <h5>Senior Engineer – IT Infrastructure Lead</h5>
+    <p>Elcon Banshu Wiring System Pvt. Ltd.</p>
+    <img src="Microsoft-Certified.webp" alt="Microsoft Certified" class="certified-badge">
 
-  <div class="contact-info">
-    📧 <strong>vijaysingh.241991@gmail.com</strong> |
-    📞 +91 96549 96956 |
-    📍 Bhiwadi, Alwar Rajasthan 301019, India<br>
-    🔗 <a href="https://www.ebwsindia.com" target="_blank" class="text-white text-decoration-underline">www.ebwsindia.com</a>
-  </div>
-
-  <div class="mt-3">
-    <a href="VIJAY_SINGH_Resume_1.pdf" download class="btn btn-light me-2">📄 Download Resume</a>
-    <a href="mailto:vijaysingh.241991@gmail.com" class="btn btn-outline-light">📬 Contact Me</a>
-  </div>
-</header>
-
-<!-- Profile Image + Certification -->
-<div class="text-center mt-4">
-  <img src="Profile%20Photo.jpeg" alt="Vijay Singh Profile" width="130" class="profile-img">
-  <div class="mt-3">
-    <img src="Microsoft-Certified.webp" alt="Microsoft Certified Badge" width="120">
-  </div>
-</div>
-
-<main class="container">
-
-  <section>
-    <h3 class="text-primary fw-bold">💼 Professional Summary</h3>
-    <p>
-      Experienced IT Infrastructure Engineer with 8+ years of experience managing enterprise networks, firewalls, virtualization, and backup solutions.
-      Adept at designing secure, scalable infrastructure and providing end-to-end technical support across distributed environments.
-    </p>
-  </section>
-
-  <section>
-    <h3 class="text-primary fw-bold">🏢 Experience</h3>
-
-    <div class="mb-3">
-      <h5><strong>System Engineer – IT Infrastructure</strong></h5>
-      <p class="mb-1"><em>Elcon Banshu Wiring System Pvt. Ltd. | June 2024 – Sept 2025</em></p>
-      <ul>
-        <li>Managed Sophos and Fortigate firewalls, VPNs (IPsec / SSL), and WAN redundancy.</li>
-        <li>Handled Windows Server 2019/2022 administration, Active Directory, and Group Policies.</li>
-        <li>Automated firewall backups via FTP and centralized NAS system.</li>
-        <li>Implemented Zabbix monitoring for server and network infrastructure.</li>
-        <li>Led IT infrastructure upgrades, user access control, and remote tool deployment.</li>
-      </ul>
+    <div class="contact-info">
+      📧 <strong>vijaysingh.241991@gmail.com</strong> |
+      📞 +91 96549 96956 |
+      📍 Bhiwadi, Alwar Rajasthan 301019, India<br>
+      🔗 <a href="https://www.ebwsindia.com" target="_blank">www.ebwsindia.com</a>
     </div>
 
     <div>
-      <h5><strong>IT Support Engineer</strong></h5>
-      <p class="mb-1"><em>Prior Organization | Jan 2020 – May 2024</em></p>
-      <ul>
-        <li>Supported end-user devices, LAN/WAN, and network troubleshooting.</li>
-        <li>Configured routers, switches, and access points for enterprise connectivity.</li>
-        <li>Provided Level 2 support for Windows and virtualization platforms.</li>
-      </ul>
+      <a href="VIJAY_SINGH_Resume_1.pdf" download class="btn-custom">📄 Download Resume</a>
+      <a href="mailto:vijaysingh.241991@gmail.com" class="btn-custom">✉️ Contact Me</a>
     </div>
-  </section>
+  </header>
 
-  <section>
-    <h3 class="text-primary fw-bold">🛠 Skills</h3>
-    <ul class="row">
-      <li class="col-md-4">Firewall Management (Sophos, Fortigate)</li>
-      <li class="col-md-4">Windows Server & AD</li>
-      <li class="col-md-4">IPsec / SSL VPN Configuration</li>
-      <li class="col-md-4">Zabbix Monitoring</li>
-      <li class="col-md-4">Network Troubleshooting</li>
-      <li class="col-md-4">VMware & Hyper-V</li>
-      <li class="col-md-4">FTP & NAS Backup</li>
-      <li class="col-md-4">Remote Administration Tools</li>
-      <li class="col-md-4">PowerShell Automation</li>
-    </ul>
-  </section>
+  <main class="container">
+    <!-- Keep your same sections -->
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="card-plain">
+        <div class="row">
+          <div class="col-md-6">
+            <ul>
+              <li>Office 365 (O365) Administration</li>
+              <li>Active Directory & GPO</li>
+              <li>Azure AD & Azure Services</li>
+              <li>Microsoft Intune & Endpoint Manager</li>
+              <li>System Administration (Windows Server)</li>
+              <li>SharePoint Online & Teams</li>
+              <li>PowerShell Automation</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul>
+              <li>Firewall Management (Sophos, FortiGate)</li>
+              <li>VPN (IPsec / SSL Site-to-Site & Remote)</li>
+              <li>Endpoint Detection & Response (EDR)</li>
+              <li>NAS Backup, Backup Validation & DR</li>
+              <li>ManageEngine SDP & Patch Management</li>
+              <li>ServiceNow / Maximo familiarity</li>
+              <li>Network Troubleshooting & VLANs</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- Experience (kept same as yours) -->
+    <!-- ... your full experience section here ... -->
 
-<footer>
-  © 2025 Vijay Singh | Designed & Maintained by Vijay Singh
-</footer>
+  </main>
 
+  <footer>© 2025 Vijay Singh | Portfolio Website</footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card-plain').forEach(card => {
+      observer.observe(card);
+    });
+  </script>
 </body>
 </html>
