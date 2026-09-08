@@ -60,7 +60,7 @@ header p {
   position: absolute;
   right: 25px;
   top: -10px;
-  width: 110px; /* larger size */
+  width: 110px;
   filter: drop-shadow(0 0 10px var(--neon));
   animation: softPulse 3s ease-in-out infinite;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -181,10 +181,18 @@ footer {
   color: var(--sub);
   margin: 60px 0 30px 0;
   font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+footer p {
+  text-shadow: 0 0 6px rgba(0,255,255,0.4);
 }
 footer a {
   color: var(--neon);
   text-decoration: none;
+  transition: 0.3s;
+}
+footer a:hover {
+  text-shadow: 0 0 10px var(--neon);
 }
 
 /* Company name styling */
@@ -248,7 +256,6 @@ footer a {
     margin: 40px 0 20px 0;
   }
 
-  /* Optional: center align contact info for better look on mobile */
   .sidebar p, .sidebar h2, .sidebar ul {
     text-align: center;
   }
@@ -257,30 +264,6 @@ footer a {
     text-align: center;
   }
 }
-
-  footer {
-  text-align: center;
-  color: var(--sub);
-  margin: 60px 0 30px 0;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-}
-
-footer p {
-  text-shadow: 0 0 6px rgba(0,255,255,0.4);
-}
-
-footer a {
-  color: var(--neon);
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-footer a:hover {
-  text-shadow: 0 0 10px var(--neon);
-}
-
-  
 </style>
 </head>
 <body>
@@ -289,14 +272,14 @@ footer a:hover {
   <img src="Profile Photo.jpeg" alt="Profile Photo" class="profile">
   <img src="Microsoft-Certified.webp" alt="Microsoft Certified" class="microsoft-badge">
   <h1>Vijay Singh</h1>
-  <p>Senior Network & Systems Engineer — Cloud | Security | Automation</p>
+  <p>Senior Engineer — IT Infrastructure | Systems | Automation</p>
 </header>
 
 <div class="container">
   <!-- Sidebar -->
   <aside class="sidebar">
     <h2>Contact</h2>
-    <p>📍 Bhiwadi, Alwar, Rajasthan, INDIA</p>
+    <p>📍 Faridabad, Haryana, INDIA</p>
     <p>📞 +91 96549 96956</p>
     <p>✉️ <strong>vijaysingh.241991@gmail.com</strong></p>
 
@@ -307,19 +290,17 @@ footer a:hover {
 
     <h2>Skills</h2>
     <ul>
-      <li>Office 365 (O365) Administration</li>
-      <li>Active Directory & GPO</li>
-      <li>Azure AD & Azure Services</li>
-      <li>Microsoft Intune & Endpoint Manager</li>
-      <li>System Administration (Windows Server)</li>
-      <li>SharePoint Online & Teams</li>
-      <li>PowerShell Automation</li>
-      <li>Firewall Management (Sophos, FortiGate)</li>
-      <li>VPN (IPsec / SSL Site-to-Site & Remote)</li>
-      <li>Endpoint Detection & Response (EDR)</li>
-      <li>NAS Backup & Disaster Recovery</li>
+      <li>Multi-Site Team Leadership</li>
+      <li>AD Architecture (GPO, LAPS, ADMX)</li>
+      <li>Cloud: Azure & Microsoft 365</li>
+      <li>AI-Assisted Automation (ChatGPT, Gemini)</li>
+      <li>Scripting: PowerShell, Bash, Python, PHP</li>
+      <li>Fiber Optic & Wiring Systems</li>
+      <li>Linux (Ubuntu Netplan Bonding)</li>
+      <li>Asset Management Development</li>
+      <li>Microsoft Graph API Integration</li>
+      <li>Firewall & VPN Management</li>
       <li>ManageEngine SDP & Patch Management</li>
-      <li>ServiceNow / Maximo familiarity</li>
       <li>Network Troubleshooting & VLANs</li>
     </ul>
   </aside>
@@ -329,7 +310,7 @@ footer a:hover {
     <section id="profile">
       <div class="section-title">Profile</div>
       <div class="card">
-        <p>Dedicated IT professional with 10+ years of experience across desktop support, system & server administration, Microsoft 365, network security, and cloud infrastructure. Proven experience leading infrastructure teams, implementing secure networks, and delivering high-availability solutions for manufacturing and enterprise clients.</p>
+        <p>Results-driven Senior IT Engineer with over a decade of hands-on experience in enterprise infrastructure management, multi-site IT operations, and network engineering. Proven track record in full-lifecycle Active Directory implementation, fiber optic deployment, and cloud administration. Highly skilled in automating workflows using PowerShell and Bash scripts accelerated by AI tools, and experienced in developing in-house asset management solutions.</p>
       </div>
     </section>
 
@@ -338,40 +319,35 @@ footer a:hover {
 
       <div class="card">
         <div class="company">Elcon Banshu Wiring System Pvt. Ltd.</div>
-        <span class="period">Senior Engineer – IT / Infrastructure Lead | Sep 2025 – Present</span>
+        <span class="period">IT-Sr. Engineer | Sep 2025 – Present</span>
         <ul>
-          <li>Leading complete IT Infrastructure operations across HO, BOs & plants ensuring uptime, security, and continuity.</li>
-          <li>Administering Sophos Firewall, IPsec tunnels, VLANs, VPNs for secure inter-office connectivity.</li>
-          <li>Automating NAS backup & replication tasks, verifying DR readiness and data integrity.</li>
-          <li>Managing Microsoft 365 tenant, Azure AD, Intune policy enforcement & endpoint compliance.</li>
-          <li>Overseeing Windows Server infra, patch management & EDR monitoring.</li>
-          <li>Vendor coordination, procurement & asset management for 100+ endpoints.</li>
-          <li>Documenting SOPs & network topology while training team members on deployments.</li>
+          <li>Direct and mentor IT support engineers across multiple distributed manufacturing plants, ensuring uninterrupted plant operations and standardized procedures.</li>
+          <li>Spearheaded complete AD implementation, configuring centralized GPOs, ADMX templates, LAPS, auto screen lock, and OneDrive KFM.</li>
+          <li>Developed and deployed enterprise backup workflows using custom PowerShell and Bash scripts crafted with AI tools (ChatGPT and Gemini) for automated NAS backups.</li>
+          <li>Designed, implemented, and maintained an in-house IT Asset Management tool and project tracker to monitor hardware lifecycles and inventory.</li>
+          <li>Engineered plant-wide fiber optic networks and configured dual-NIC network bonding on Ubuntu Linux servers via Netplan.</li>
+          <li>Automated user onboarding and mailbox reporting via Microsoft Graph API and MSAL integration.</li>
         </ul>
       </div>
 
       <div class="card">
-        <div class="company">Progression Infonet Pvt. Ltd. <small style="color:var(--sub)">• Client: Imperial Auto Industries</small></div>
-        <span class="period">System Engineer – IT Infrastructure | Jun 2024 – Sep 2025</span>
+        <div class="company">Progression Infonet Pvt. Ltd.</div>
+        <span class="period">Senior Engineer | Jun 2024 – Aug 2025</span>
         <ul>
-          <li>Managed hybrid Windows Server & Azure environments ensuring high availability and compliance.</li>
-          <li>Administered AD structure, GPOs, and user lifecycle for 1,000+ accounts.</li>
-          <li>Configured Intune MDM, Conditional Access, and MFA policies for security improvement.</li>
-          <li>Automated user provisioning and mailbox creation via PowerShell scripts.</li>
-          <li>Planned patch schedules, vulnerability remediation and backup validation.</li>
-          <li>Collaborated with Imperial Auto Industries IT teams on migration and documentation.</li>
+          <li>Administered enterprise Microsoft 365 tenants, Active Directory, GPO security baselines, and granular user permissions.</li>
+          <li>Managed EDR, Multi-Factor Authentication (MFA), Azure resources, and SharePoint architectures.</li>
+          <li>Handled Tier-2 technical support via ManageEngine ServiceDesk Plus and centrally administered ~2,000 corporate endpoints.</li>
+          <li>Mentored junior engineers and support staff on system administration standards and incident remediation.</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="company">Future Focus Infotech Pvt. Ltd. <small style="color:var(--sub)">• Client: IBM India</small></div>
-        <span class="period">IT Support Engineer – L2 | Feb 2023 – May 2024</span>
+        <span class="period">Desktop Support Engineer – L2 | Feb 2023 – May 2024</span>
         <ul>
-          <li>Provided administration for Windows Server, Exchange & M365 for IBM clients.</li>
-          <li>Resolved tickets via ServiceNow ensuring SLA compliance.</li>
-          <li>Handled AD replication, logon failures & lockout issues.</li>
-          <li>Developed PowerShell scripts for automation and audit reports.</li>
-          <li>Supported MFA and Conditional Access policy rollout.</li>
+          <li>Delivered technical support for enterprise Citrix virtual desktop environments and remote desktop connections.</li>
+          <li>Configured and deployed Mobile Device Management (MDM) policies and managed workstation baseline images.</li>
+          <li>Resolved L1/L2 incident tickets using IBM Maximo and ServiceNow ensuring strict SLA compliance.</li>
         </ul>
       </div>
 
@@ -379,20 +355,18 @@ footer a:hover {
         <div class="company">Isourse Technologies Pvt. Ltd. <small style="color:var(--sub)">• Client: Uno Minda</small></div>
         <span class="period">IT Support Engineer | May 2022 – Dec 2022</span>
         <ul>
-          <li>Managed AD user lifecycle and maintained GPOs for factory desktops.</li>
-          <li>Provisioned RDP & VPN access for remote users with least-privilege access.</li>
-          <li>Deployed software, AV, and updates across endpoints and validated success.</li>
-          <li>Supported factory LAN devices, CCTV connectivity and NAS storage.</li>
+          <li>Delivered seamless remote support to off-site users using TeamViewer, MS Teams, and secure remote gateways.</li>
+          <li>Standardized enterprise IT inventory tracking and hardware rollout workflows across manufacturing plant divisions.</li>
+          <li>Maintained MS Outlook data backups, profile rebuilds, and operating system recovery operations.</li>
         </ul>
       </div>
 
       <div class="card">
         <div class="company">S.S. Enterprises</div>
-        <span class="period">Desktop Support Engineer | Aug 2019 – Apr 2022</span>
+        <span class="period">Desktop Support - L1 | Aug 2019 – Apr 2022</span>
         <ul>
-          <li>Delivered on-site and remote desktop support (installation & troubleshooting).</li>
-          <li>Managed local AD authentication and print queues for small clusters.</li>
-          <li>Assisted with server migrations and endpoint security setup.</li>
+          <li>Managed desktop installations, client OS troubleshooting, peripheral maintenance, and Outlook archive backups.</li>
+          <li>Configured routine Windows update patches and assisted in network troubleshooting for business operations.</li>
         </ul>
       </div>
 
@@ -400,20 +374,19 @@ footer a:hover {
         <div class="company">Quality Footwear Industries</div>
         <span class="period">Desktop Support Engineer | Sep 2014 – Aug 2019</span>
         <ul>
-          <li>Provided IT support for factory & office users – desktops, laptops, printers & LAN.</li>
-          <li>Troubleshot Windows OS, drivers and network connectivity.</li>
-          <li>Performed preventive maintenance and periodic backups.</li>
+          <li>Maintained local LAN cabling, switches, client workstations, and secure remote VPN connections for off-site users.</li>
+          <li>Streamlined helpdesk ticketing workflows, substantially improving first-contact resolution metrics.</li>
         </ul>
       </div>
     </section>
 
     <section id="education">
-      <div class="section-title">Education & Training</div>
+      <div class="section-title">Education & Certifications</div>
       <div class="card">
         <ul>
-          <li>BCA — Shobhit University, Meerut</li>
-          <li>Azure Administrator (AZ-104) — Microsoft Certified</li>
-          <li>Windows Server Training — SSDN Technologies, Gurugram</li>
+          <li><strong>Microsoft Certified: Azure Administrator Associate</strong> (04/2025)</li>
+          <li><strong>Bachelor of Computer Applications (BCA)</strong> — Shobhit University, Meerut (04/2011 - 03/2014)</li>
+          <li><strong>Azure AZ-104 & Windows Server Training</strong> — SSDN Technologies, Gurugram</li>
         </ul>
       </div>
     </section>
@@ -421,7 +394,7 @@ footer a:hover {
 </div>
 
 <footer>
-  <p>© 2025 Vijay Singh | 
+  <p>© 2026 Vijay Singh | 
     <a href="mailto:vijaysingh.241991@gmail.com">Email</a> • 
     <a href="https://www.linkedin.com/in/vijay-singh-205ba2136/" target="_blank">LinkedIn</a> • 
     <a href="https://www.ebwsindia.com" target="_blank">EBWS</a>
